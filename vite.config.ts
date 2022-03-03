@@ -8,6 +8,7 @@ const { resolve } = require('path');
 export default defineConfig({
   plugins: [
     react(),
+    // 按需 引入 antd
     vitePluginImp({
       libList: [
         {
@@ -33,7 +34,7 @@ export default defineConfig({
     },
     preprocessorOptions: {
       less: {
-        // 支持内联 JavaScript
+        // 支持内联 JavaScript ，不开启 antd 的按需引入 会报错
         javascriptEnabled: true,
       },
     },
