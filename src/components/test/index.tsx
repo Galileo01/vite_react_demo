@@ -1,23 +1,29 @@
 import React from "react";
 import styles from "./index.module.less";
 
-function Test() {
-  console.log(styles);
-  const [age, setAge] = React.useState(18);
-  const coust = React.useMemo(() => age * 10, [age]);
-  const height = React.useMemo(() => age + 100, [age]);
+type TestProps = {
+  tag: string;
+};
+
+const Test: React.FC<TestProps> = (props) => {
+  const { tag } = props;
+  const [count, setCount] = React.useState(0);
 
   return (
     <div className={styles.container}>
-      <span className={styles.text}>Test</span>
-      <span>age:{coust}</span>
-      <p>Setup ESLINT & Prettier</p>
-      <button onClick={() => setAge((pre) => pre + 1)} type="button">
-        add age
+      <div className={styles.text}>Test</div>
+      <div>tag:{tag}</div>
+      <div>count {count}</div>
+      <button
+        type="button"
+        onClick={() => {
+          setCount((preCount) => preCount + 1);
+        }}
+      >
+        click to add
       </button>
-      <span>height:{height}</span>
     </div>
   );
-}
+};
 
 export default Test;
