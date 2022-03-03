@@ -1,11 +1,11 @@
-import React from 'react';
-import styles from './index.module.less';
+import React from "react";
+import styles from "./index.module.less";
 
 function Test() {
   console.log(styles);
   const [age, setAge] = React.useState(18);
   const coust = React.useMemo(() => age * 10, [age]);
-  const height = React.useMemo(() => age + 100, []);
+  const height = React.useMemo(() => age + 100, [age]);
 
   return (
     <div className={styles.container}>
@@ -15,6 +15,7 @@ function Test() {
       <button onClick={() => setAge((pre) => pre + 1)} type="button">
         add age
       </button>
+      <span>height:{height}</span>
     </div>
   );
 }
