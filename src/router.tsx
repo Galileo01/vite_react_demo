@@ -1,18 +1,18 @@
-import React, { Suspense } from 'react';
+import React, { Suspense } from "react";
 
-import type { RouteObject } from 'react-router-dom';
-import Index from './pages/index/index';
+import type { RouteObject } from "react-router-dom";
+import Index from "./pages/index/index";
 
 // React.lazy 配合 import() 实现懒加载
-const About = React.lazy(() => import('./pages/about'));
+const About = React.lazy(() => import("./pages/about"));
 
 const routes: RouteObject[] = [
   {
-    path: '/',
+    path: "/",
     element: <Index />,
   },
   {
-    path: '/about',
+    path: "/about",
     element: (
       <Suspense fallback={<span>loading component</span>}>
         <About />

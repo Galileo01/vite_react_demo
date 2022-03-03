@@ -11,5 +11,6 @@ dist 
 .husky 
 .local 
 /bin
+.eslintrc.js
 *.config.js
-*.config.ts
+vite.config.ts
